@@ -47,8 +47,8 @@ public class ChatActivity extends AppCompatActivity {
         ChatList.setAdapter(ChatAdpt);
 
         UserName = getIntent().getExtras().get("user_name").toString();
-        SelectedChat = getIntent().getExtras().get("selected_chat").toString();
-        setTitle("Topic: "+SelectedChat);
+        SelectedChat = getIntent().getExtras().get("selected_topic").toString();
+        setTitle("Chat with: "+SelectedChat);
 
         FirebaseDB = FirebaseDatabase.getInstance().getReference().child(SelectedChat);
 
