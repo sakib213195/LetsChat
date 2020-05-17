@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "560830541527",
+    "firebase_url": "https://letschat-cdeb6.firebaseio.com",
+    "project_id": "letschat-cdeb6",
+    "storage_bucket": "letschat-cdeb6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:560830541527:android:bfda8db71084d57a8cca92",
+        "android_client_info": {
+          "package_name": "c.khan.letschat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "560830541527-7drvn6jkj7lo465gap8n942sbonaonko.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "c.khan.letschat",
+            "certificate_hash": "7d3b8ac27a08eedf6b02ffb92d83795ad75e7d88"
+          }
+        },
+        {
+          "client_id": "560830541527-vp05odva1cust3ul9q4t8qs2r2rjqg6a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4VM2elpdXZBqMyiRTw2MoT6g9CqEFDQU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "560830541527-vp05odva1cust3ul9q4t8qs2r2rjqg6a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
