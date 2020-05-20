@@ -128,7 +128,7 @@ public class SignIn extends AppCompatActivity {
             });
         }
         else{
-            Toast.makeText(SignIn.this, "acc failed", Toast.LENGTH_SHORT).show();
+            Toast.makeText(SignIn.this, "Unable to Sign In", Toast.LENGTH_SHORT).show();
         }
         }
 

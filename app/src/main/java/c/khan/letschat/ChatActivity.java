@@ -1,5 +1,7 @@
 package c.khan.letschat;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -8,13 +10,19 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -26,6 +34,9 @@ public class ChatActivity extends AppCompatActivity {
     Button sendbutton;
     EditText EditList;
     ListView ChatList;
+    ImageButton mPhotoPickerButton;
+
+    private static final int RC_PHOTO_PICKER = 2;
 
     ArrayList<String> ListChat = new ArrayList<String>();
     ArrayAdapter ChatAdpt;
@@ -39,12 +50,29 @@ public class ChatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
 
+
         sendbutton = (Button) findViewById(R.id.sendbutton);
         EditList = (EditText) findViewById(R.id.EditList);
         ChatList = (ListView) findViewById(R.id.ChatList);
 
+        mPhotoPickerButton = (ImageButton) findViewById(R.id.photoPickerButton);
+
+
         ChatAdpt = new ArrayAdapter(this, android.R.layout.simple_list_item_1, ListChat);
         ChatList.setAdapter(ChatAdpt);
+
+
+
+        mPhotoPickerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // TODO: Fire an intent to show an image picker
+                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                intent.setType("image/jpeg");
+                intent.putExtra(Intent.EXTRA_LOCAL_ONLY, true);
+                startActivityForResult(Intent.createChooser(intent, "Select Photo"), RC_PHOTO_PICKER);
+            }
+        });
 
         UserName = getIntent().getExtras().get("user_name").toString();
         SelectedChat = getIntent().getExtras().get("selected_topic").toString();
@@ -96,6 +124,8 @@ public class ChatActivity extends AppCompatActivity {
         });
 
     }
+
+
 
     public void updateChat(DataSnapshot dataSnapshot){
         String message, user, chat;

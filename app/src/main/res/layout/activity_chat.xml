@@ -22,12 +22,22 @@
     <EditText
         android:id="@+id/EditList"
         android:layout_width="250dp"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
         android:layout_below="@+id/ChatList"
         android:layout_centerInParent="true"
         android:layout_alignParentLeft="true"
 
         />
+
+        <ImageButton
+            android:id="@+id/photoPickerButton"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_below="@+id/ChatList"
+            android:layout_alignRight="@+id/EditList"
+            android:background="@android:drawable/ic_menu_gallery" />
 
         <Button
             android:id="@+id/sendbutton"

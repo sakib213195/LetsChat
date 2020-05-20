@@ -13,6 +13,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -38,6 +39,8 @@ public class DatabaseConnection extends AppCompatActivity {
     ListView LiveChats;
     ArrayList<String> ChatList = new ArrayList<String>();
     ArrayAdapter ChatAdpt;
+    private static final int RC_PHOTO_PICKER = 2;
+
 
     String UserName;
 
@@ -53,7 +56,6 @@ public class DatabaseConnection extends AppCompatActivity {
 
         final Button signout = (Button) findViewById(R.id.signout);
 
-
         View.OnClickListener handler = new View.OnClickListener(){
 
             public void onClick(View v) {
@@ -67,6 +69,7 @@ public class DatabaseConnection extends AppCompatActivity {
             }
         };
         signout.setOnClickListener(handler);
+
 
         LiveChats = (ListView) findViewById(R.id.LiveChats);
         ChatAdpt = new ArrayAdapter(this, android.R.layout.simple_list_item_1, ChatList);
@@ -90,7 +93,6 @@ public class DatabaseConnection extends AppCompatActivity {
                 ChatAdpt.notifyDataSetChanged();
             }
 
-
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
@@ -107,6 +109,7 @@ public class DatabaseConnection extends AppCompatActivity {
                 startActivity(j);
             }
         });
+
 
     }
 
