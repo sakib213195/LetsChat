@@ -8,12 +8,24 @@
     tools:context="c.khan.letschat.DatabaseConnection">
 
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <ListView
         android:id="@+id/LiveChats"
         android:textAlignment="center"
-        android:layout_margin="80dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/signout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/LiveChats"
+
+        android:text="Sign Out?" />
+
+    </RelativeLayout>
 
 
 </LinearLayout>

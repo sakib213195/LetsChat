@@ -34,6 +34,7 @@ import java.util.Set;
 
 public class DatabaseConnection extends AppCompatActivity {
 
+
     ListView LiveChats;
     ArrayList<String> ChatList = new ArrayList<String>();
     ArrayAdapter ChatAdpt;
@@ -43,10 +44,30 @@ public class DatabaseConnection extends AppCompatActivity {
     private DatabaseReference FirebaseDB = FirebaseDatabase.getInstance().getReference().getRoot();
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_database_connection);
+
+        final Button signout = (Button) findViewById(R.id.signout);
+
+
+        View.OnClickListener handler = new View.OnClickListener(){
+
+            public void onClick(View v) {
+
+                if(v==signout){
+                    Intent intentMain = new Intent(DatabaseConnection.this ,
+                            SignIn.class);
+                    DatabaseConnection.this.startActivity(intentMain);
+                }
+
+            }
+        };
+        signout.setOnClickListener(handler);
+
         LiveChats = (ListView) findViewById(R.id.LiveChats);
         ChatAdpt = new ArrayAdapter(this, android.R.layout.simple_list_item_1, ChatList);
         LiveChats.setAdapter(ChatAdpt);
@@ -86,6 +107,11 @@ public class DatabaseConnection extends AppCompatActivity {
                 startActivity(j);
             }
         });
+
+    }
+
+    @Override
+    public void onBackPressed() {
 
     }
 
