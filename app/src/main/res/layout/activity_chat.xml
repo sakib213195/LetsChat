@@ -13,7 +13,10 @@
     <ListView
         android:id="@+id/ChatList"
         android:layout_width="match_parent"
-        android:layout_height="450dp">
+        android:layout_height="450dp"
+        android:stackFromBottom="true"
+        android:transcriptMode="normal"
+        >
 
     </ListView>
 
@@ -37,7 +40,9 @@
             android:layout_height="36dp"
             android:layout_below="@+id/ChatList"
             android:layout_alignRight="@+id/EditList"
-            android:background="@android:drawable/ic_menu_gallery" />
+            android:background="@android:drawable/ic_menu_gallery"
+            android:visibility="invisible"
+            />
 
         <Button
             android:id="@+id/sendbutton"

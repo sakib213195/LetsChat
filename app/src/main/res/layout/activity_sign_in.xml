@@ -18,7 +18,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignRight="@+id/sign_in_button"
         android:layout_marginTop="43dp"
-        android:text="Welcome to LetsChat"
+        android:text="Welcome to LetsText"
         android:textStyle="italic"
         android:textSize="20dp"
 
